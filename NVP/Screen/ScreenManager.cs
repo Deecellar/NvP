@@ -43,17 +43,17 @@ namespace NVP.Screen
             _activeScreen = screen;
         }
 
-        public void Initialize()
+        public override void Initialize()
         {
             _activeScreen?.Initialize();
             _isInitializated = true;
         } 
-        public void LoadContent()
+        protected override void LoadContent()
         {
             _activeScreen?.LoadContent();
             _isLoaded = true;
         }
-        public void UnloadContent()
+        protected override void UnloadContent()
         {
             _activeScreen?.UnloadContent();
             _isLoaded = false;
