@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danel/source/repos/NVP/NVP/Content/GeonBit.UI/themes/hd/textures/icons/Map.png</SourceFile>
-  <SourceTime>2019-02-14T15:33:27.1267098-05:00</SourceTime>
-  <DestFile>C:/Users/danel/source/repos/NVP/NVP/Content/bin/DesktopGL/GeonBit.UI/themes/hd/textures/icons/Map.xnb</DestFile>
-  <DestTime>2019-02-14T15:48:25.4844811-05:00</DestTime>
+  <SourceFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/GeonBit.UI/themes/hd/textures/icons/Map.png</SourceFile>
+  <SourceTime>2019-02-27T13:32:55.986195-05:00</SourceTime>
+  <DestFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/bin/DesktopGL/GeonBit.UI/themes/hd/textures/icons/Map.xnb</DestFile>
+  <DestTime>2019-03-14T16:38:08.7807225-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

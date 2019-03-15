@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danel/source/repos/NVP/NVP/Content/GeonBit.UI/themes/editor/textures/icons/PotionBlue.png</SourceFile>
-  <SourceTime>2019-02-14T15:33:37.4773451-05:00</SourceTime>
-  <DestFile>C:/Users/danel/source/repos/NVP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/editor/textures/icons/PotionBlue.xnb</DestFile>
-  <DestTime>2019-02-14T16:27:11.0127837-05:00</DestTime>
+  <SourceFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/GeonBit.UI/themes/editor/textures/icons/PotionBlue.png</SourceFile>
+  <SourceTime>2019-02-27T13:32:55.7465471-05:00</SourceTime>
+  <DestFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/editor/textures/icons/PotionBlue.xnb</DestFile>
+  <DestTime>2019-03-15T11:05:16.8031614-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

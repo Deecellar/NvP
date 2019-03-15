@@ -16,20 +16,24 @@ namespace NVP.Helpers
         public Action<MouseEventArgs> MouseFunc { get; set; }
         public Action<MouseEventArgs> MouseDragFunc { get; set; }
 
+
+
         GamePadListener GamePad;
         KeyboardListener KeyboardListener;
         MouseListener MouseListener;
         List<InputListener> InputsList;
         public InputManager(Game game) 
         {
-            
+
+
             GamePadListenerSettings gamePad = new GamePadListenerSettings();
             KeyboardListenerSettings keyboard = new KeyboardListenerSettings();
             MouseListenerSettings mouseListener = new MouseListenerSettings();
 
+            
 
             #region Configurando Controllers
-            keyboard.RepeatPress = false;
+            keyboard.RepeatPress = true;
             gamePad.PlayerIndex = PlayerIndex.One;
             gamePad.VibrationEnabled = false;
             mouseListener.ViewportAdapter = new MonoGame.Extended.ViewportAdapters.BoxingViewportAdapter(game.Window, game.GraphicsDevice, game.Window.ClientBounds.X, game.Window.ClientBounds.Y);
@@ -46,10 +50,16 @@ namespace NVP.Helpers
             GamePad.ButtonDown += GamePad_ButtonDown;
             KeyboardListener.KeyPressed += KeyboardListener_KeyPressed;
             MouseListener.MouseClicked += MouseListener_MouseClicked;
+            MouseListener.MouseDrag += MouseListener_MouseDrag;
             
             #endregion
 
             game.Components.Add(new InputListenerComponent(game, InputsList.ToArray()));
+        }
+
+        private void MouseListener_MouseDrag(object sender, MouseEventArgs e)
+        {
+            MouseDragFunc.Invoke(e);
         }
 
         private void MouseListener_MouseClicked(object sender, MouseEventArgs e)
@@ -64,9 +74,10 @@ namespace NVP.Helpers
 
         private void GamePad_ButtonDown(object sender, GamePadEventArgs e)
         {
-            GamePadFunc.Invoke(e)
+            GamePadFunc.Invoke(e);
         }
 
+       
 
         public override void Update(GameTime gameTime)
         {

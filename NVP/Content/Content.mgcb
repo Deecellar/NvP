@@ -11,6 +11,7 @@
 #-------------------------------- References --------------------------------#
 
 /reference:..\..\packages\GeonBit.UI.3.4.0\lib\geonbitui\DataTypes.dll
+/reference:..\..\packages\MonoGame.Extended.Content.Pipeline.1.1.0\tools\MonoGame.Extended.Content.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -27,25 +28,13 @@
 /build:GeonBit.UI/themes/editor/effects/silhouette.fx
 
 #begin GeonBit.UI/themes/editor/fonts/Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/editor/fonts/Bold.spritefont
+/copy:GeonBit.UI/themes/editor/fonts/Bold.spritefont
 
 #begin GeonBit.UI/themes/editor/fonts/Italic.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/editor/fonts/Italic.spritefont
+/copy:GeonBit.UI/themes/editor/fonts/Italic.spritefont
 
 #begin GeonBit.UI/themes/editor/fonts/Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/editor/fonts/Regular.spritefont
+/copy:GeonBit.UI/themes/editor/fonts/Regular.spritefont
 
 #begin GeonBit.UI/themes/editor/styles/Button-Default.xml
 /importer:XmlImporter
@@ -1612,25 +1601,13 @@
 /build:GeonBit.UI/themes/hd/effects/silhouette.fx
 
 #begin GeonBit.UI/themes/hd/fonts/Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/hd/fonts/Bold.spritefont
+/copy:GeonBit.UI/themes/hd/fonts/Bold.spritefont
 
 #begin GeonBit.UI/themes/hd/fonts/Italic.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/hd/fonts/Italic.spritefont
+/copy:GeonBit.UI/themes/hd/fonts/Italic.spritefont
 
 #begin GeonBit.UI/themes/hd/fonts/Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/hd/fonts/Regular.spritefont
+/copy:GeonBit.UI/themes/hd/fonts/Regular.spritefont
 
 #begin GeonBit.UI/themes/hd/styles/Button-Default.xml
 /importer:XmlImporter
@@ -3197,25 +3174,13 @@
 /build:GeonBit.UI/themes/lowres/effects/silhouette.fx
 
 #begin GeonBit.UI/themes/lowres/fonts/Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/lowres/fonts/Bold.spritefont
+/copy:GeonBit.UI/themes/lowres/fonts/Bold.spritefont
 
 #begin GeonBit.UI/themes/lowres/fonts/Italic.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/lowres/fonts/Italic.spritefont
+/copy:GeonBit.UI/themes/lowres/fonts/Italic.spritefont
 
 #begin GeonBit.UI/themes/lowres/fonts/Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:GeonBit.UI/themes/lowres/fonts/Regular.spritefont
+/copy:GeonBit.UI/themes/lowres/fonts/Regular.spritefont
 
 #begin GeonBit.UI/themes/lowres/styles/Button-Default.xml
 /importer:XmlImporter
@@ -4780,4 +4745,33 @@
 /importer:XmlImporter
 /processor:PassThroughProcessor
 /build:GeonBit.UI/themes/lowres/ThemeData.xml
+
+#begin Mapas/Level1.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/Level1.tmx
+
+#begin Mapas/Tileset.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Mapas/Tileset.png
+
+#begin Sprites/Towers/32.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Towers/32.png
 
