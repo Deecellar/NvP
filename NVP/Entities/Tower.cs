@@ -40,19 +40,18 @@ namespace NVP.Entities
         public Game Game { get; internal set; }
         SpriteBatch Sprite;
 
-        public Tower(Game game, Vector2 position, Texture2D texture)
+        public Tower(Game game, Vector2 position, Texture2D texture, SpriteBatch sprite)
         {
             Game = game;
 
-            Sprite = new SpriteBatch(Game.GraphicsDevice);
+            Sprite = sprite;
             Position = position;
             Image = texture;
         }
         public override void Draw(GameTime gameTime)
         {
-            Sprite.Begin();
             Sprite.Draw(Image, Position, Color.White);
-            Sprite.End();
+
         }
 
         public override void Update(GameTime gameTime)

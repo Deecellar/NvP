@@ -33,7 +33,7 @@ namespace NVP.Screen
         public GameSelectedLevel(Game game, int level) : base(game)
         {
 
-            var viewport = new MonoGame.Extended.ViewportAdapters.BoxingViewportAdapter(Game.Window, GraphicsDevice, Game.Window.ClientBounds.X, Game.Window.ClientBounds.Y);
+            var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(GraphicsDevice);
             camera = new Camera2D(viewport);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             tiledHelper = new TiledHelper(game, camera);
@@ -56,8 +56,8 @@ namespace NVP.Screen
         {
              if(args.Button == MouseButton.Left)
             {
-                Vector2 Position = camera.ScreenToWorld(args.Position.ToVector2());
-                Tower tower = new Tower(Game, Position, Content.Load<Texture2D>("Sprites/Towers/32"));
+                Vector2 Position = camera.ScreenToWorld(args.Position.ToVector2()) + new Vector2(-32,-32);
+                Tower tower = new Tower(Game, Position, Content.Load<Texture2D>("Sprites/Towers/32"), spriteBatch);
                 towers.Add(tower);
             }
         }

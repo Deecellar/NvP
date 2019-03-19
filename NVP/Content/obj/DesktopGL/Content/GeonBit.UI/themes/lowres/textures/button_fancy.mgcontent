@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/GeonBit.UI/themes/lowres/textures/button_fancy.png</SourceFile>
-  <SourceTime>2019-02-27T13:32:56.0330207-05:00</SourceTime>
-  <DestFile>C:/Users/Usuario/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/lowres/textures/button_fancy.xnb</DestFile>
-  <DestTime>2019-03-15T11:05:23.2239014-05:00</DestTime>
+  <SourceFile>C:/Users/dan19/source/repos/NvP/NVP/Content/GeonBit.UI/themes/lowres/textures/button_fancy.png</SourceFile>
+  <SourceTime>2019-03-18T16:53:20.8892788-05:00</SourceTime>
+  <DestFile>C:/Users/dan19/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/lowres/textures/button_fancy.xnb</DestFile>
+  <DestTime>2019-03-18T19:37:32.3312655-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

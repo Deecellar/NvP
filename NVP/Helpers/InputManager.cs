@@ -36,7 +36,9 @@ namespace NVP.Helpers
             keyboard.RepeatPress = true;
             gamePad.PlayerIndex = PlayerIndex.One;
             gamePad.VibrationEnabled = false;
-            mouseListener.ViewportAdapter = new MonoGame.Extended.ViewportAdapters.BoxingViewportAdapter(game.Window, game.GraphicsDevice, game.Window.ClientBounds.X, game.Window.ClientBounds.Y);
+            mouseListener.ViewportAdapter = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(game.GraphicsDevice);
+            mouseListener.DoubleClickMilliseconds = int.MaxValue;
+            mouseListener.DragThreshold = 40;
             #endregion
             #region Poniendolos en lista
             InputsList = new List<InputListener>();
