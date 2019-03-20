@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danel/source/repos/NVP/NVP/Content/GeonBit.UI/themes/hd/textures/cursor_default.png</SourceFile>
-  <SourceTime>2019-02-14T15:33:28.4692279-05:00</SourceTime>
-  <DestFile>C:/Users/danel/source/repos/NVP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/hd/textures/cursor_default.xnb</DestFile>
-  <DestTime>2019-02-14T16:27:23.2325044-05:00</DestTime>
+  <SourceFile>C:/Users/dan19/source/repos/NvP/NVP/Content/GeonBit.UI/themes/hd/textures/cursor_default.png</SourceFile>
+  <SourceTime>2019-03-18T16:53:18.7963225-05:00</SourceTime>
+  <DestFile>C:/Users/dan19/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/hd/textures/cursor_default.xnb</DestFile>
+  <DestTime>2019-03-18T19:37:16.8695201-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

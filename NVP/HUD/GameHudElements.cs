@@ -24,7 +24,7 @@ namespace NVP.HUD
             Life.Value = 100;
             
         }
-        public ProgressBar CreateObjectLifeBar(IEntityBase entityBase)
+        public ProgressBar CreateObjectLifeBar()
         {
             throw new NotImplementedException();
         }

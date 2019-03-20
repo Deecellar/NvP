@@ -43,11 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Enemies.cs" />
-    <Compile Include="Entities\IEntityBase.cs" />
-    <Compile Include="Entities\Particle.cs" />
     <Compile Include="Entities\Tower.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Helpers\InputManager.cs" />
+    <Compile Include="Helpers\TiledHelper.cs" />
     <Compile Include="HUD\GameHudElements.cs" />
     <Compile Include="HUD\Menu.cs" />
     <Compile Include="Program.cs" />

@@ -1,56 +1,79 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace NVP.Entities
 {
-    class Tower : IEntityBase
+    class Tower : SimpleDrawableGameComponent
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Vector2 Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public float RotationDegrees { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Quaternion Rotation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public float Health => throw new NotImplementedException();
-
-        public bool IsEnemy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Texture2D Image { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public bool Enabled => throw new NotImplementedException();
-
-        public int UpdateOrder => throw new NotImplementedException();
-
-        public int DrawOrder => throw new NotImplementedException();
-
-        public bool Visible => throw new NotImplementedException();
-
-        public event EventHandler<EventArgs> EnabledChanged;
-        public event EventHandler<EventArgs> UpdateOrderChanged;
-        public event EventHandler<EventArgs> DrawOrderChanged;
-        public event EventHandler<EventArgs> VisibleChanged;
-
-        public void Draw(GameTime gameTime)
+        public int Life { get; set; }
+        public int Daño { get; set; }
+        private Quaternion quaternion;
+        public Quaternion Rotation
         {
-            throw new NotImplementedException();
+            get { return quaternion; }
+            set
+            {
+                quaternion = value;
+                SetDegrees(value);
+            }
+        }
+        private float rotationDegrees;
+        public float RotationDegrees
+        {
+            get { return rotationDegrees; }
+            set
+            {
+                rotationDegrees = value;
+                SetDegrees(value);
+            }
+        }
+        public Texture2D Image;
+
+        public Vector2 Position { get; set; }
+
+        public Game Game { get; internal set; }
+        SpriteBatch Sprite;
+
+        public Tower(Game game, Vector2 position, Texture2D texture, SpriteBatch sprite)
+        {
+            Game = game;
+
+            Sprite = sprite;
+            Position = position;
+            Image = texture;
+        }
+        public override void Draw(GameTime gameTime)
+        {
+            Sprite.Draw(Image, Position, Color.White);
+
         }
 
-        public void GiveDamage(IEntityBase entity)
+        public override void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public void TakeDamage()
+
+        protected override void UnloadContent()
         {
-            throw new NotImplementedException();
+            Image = null;
+
         }
 
-        public void Update(GameTime gameTime)
+        private void SetDegrees(float value)
         {
-            throw new NotImplementedException();
+            Rotation = new Quaternion(value, Vector3.Forward.X, Vector3.Forward.Y, Vector3.Forward.Z);
+        }
+
+        private void SetDegrees(Quaternion value)
+        {
+            RotationDegrees = value.X;
         }
     }
 }
