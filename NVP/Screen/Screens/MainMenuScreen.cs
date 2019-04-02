@@ -26,7 +26,7 @@ namespace NVP.Screen.Screens
                 OnClick = btn =>
                                 {
                                     UserInterface.Active.Clear();
-                                    ScreenManager.LoadScreen(new GameSelectScreen(Game), new Transitions.ExpandTransition(GraphicsDevice, Color.Black,5));
+                                    ScreenManager.LoadScreen(new GameSelectScreen(Game), new Transitions.ExpandTransition(GraphicsDevice, Color.Black,3.5f));
                                 }
             });
             buttons.Add(new Button("Opciones")
@@ -45,7 +45,8 @@ namespace NVP.Screen.Screens
                     Game.Exit();
                 }
             });
-            Menu.CreateMenu("Menu", 400, 400, buttons);
+            var viewport =new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(Game.GraphicsDevice);
+            Menu.CreateMenu("Menu", viewport.BoundingRectangle.Width /2, viewport.BoundingRectangle.Height /1.5f, buttons);
         }
         public override void Draw(GameTime gameTime)
         {

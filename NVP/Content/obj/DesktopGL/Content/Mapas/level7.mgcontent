@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Mapas/level7.tmx</SourceFile>
+  <SourceTime>2019-04-02T09:43:07.7885366-05:00</SourceTime>
+  <DestFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Mapas/level7.xnb</DestFile>
+  <DestTime>2019-04-02T10:54:33.1553153-05:00</DestTime>
+  <Importer>TiledMapImporter</Importer>
+  <ImporterTime>2018-05-23T11:26:24-05:00</ImporterTime>
+  <Processor>TiledMapProcessor</Processor>
+  <ProcessorTime>2018-05-23T11:26:24-05:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

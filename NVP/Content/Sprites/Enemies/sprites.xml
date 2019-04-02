@@ -1,0 +1,20 @@
+<XnaContent>
+<Asset Type="System.Collections.Generic.Dictionary[System.String, Microsoft.Xna.Framework.Rectangle]">
+<Item><Key>charset_template_combat_01.png</Key><Value>32 0 13 16 </Value></Item>
+<Item><Key>charset_template_combat_02.png</Key><Value>16 0 14 16 </Value></Item>
+<Item><Key>charset_template_combat_03.png</Key><Value>31 18 13 16 </Value></Item>
+<Item><Key>charset_template_combat_04.png</Key><Value>31 36 11 18 </Value></Item>
+<Item><Key>charset_template_combat_05.png</Key><Value>46 18 11 16 </Value></Item>
+<Item><Key>charset_template_combat_06.png</Key><Value>59 18 8 16 </Value></Item>
+<Item><Key>charset_template_combat_07.png</Key><Value>57 36 9 16 </Value></Item>
+<Item><Key>charset_template_combat_08.png</Key><Value>0 36 14 16 </Value></Item>
+<Item><Key>charset_template_combat_09.png</Key><Value>16 18 13 16 </Value></Item>
+<Item><Key>charset_template_combat_10.png</Key><Value>0 18 14 16 </Value></Item>
+<Item><Key>charset_template_combat_11.png</Key><Value>16 36 13 16 </Value></Item>
+<Item><Key>charset_template_combat_12.png</Key><Value>44 54 11 15 </Value></Item>
+<Item><Key>charset_template_combat_13.png</Key><Value>47 0 9 16 </Value></Item>
+<Item><Key>charset_template_combat_14.png</Key><Value>58 0 8 16 </Value></Item>
+<Item><Key>charset_template_combat_15.png</Key><Value>44 36 11 16 </Value></Item>
+<Item><Key>charset_template_combat_16.png</Key><Value>0 0 14 16 </Value></Item>
+</Asset>
+</XnaContent>

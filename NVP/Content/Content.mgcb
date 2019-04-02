@@ -4746,10 +4746,45 @@
 /processor:PassThroughProcessor
 /build:GeonBit.UI/themes/lowres/ThemeData.xml
 
-#begin Mapas/Level1.tmx
+#begin Mapas/level1.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:Mapas/Level1.tmx
+/build:Mapas/level1.tmx
+
+#begin Mapas/level2.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level2.tmx
+
+#begin Mapas/level3.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level3.tmx
+
+#begin Mapas/level4.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level4.tmx
+
+#begin Mapas/level5.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level5.tmx
+
+#begin Mapas/level6.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level6.tmx
+
+#begin Mapas/level7.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level7.tmx
+
+#begin Mapas/level8.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:Mapas/level8.tmx
 
 #begin Mapas/Tileset.png
 /importer:TextureImporter
@@ -4762,6 +4797,23 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Mapas/Tileset.png
+
+#begin Sprites/Enemies/sprites.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Enemies/sprites.png
+
+#begin Sprites/Enemies/sprites.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Sprites/Enemies/sprites.xml
 
 #begin Sprites/Towers/32.png
 /importer:TextureImporter

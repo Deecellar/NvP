@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/dan19/source/repos/NvP/NVP/Content/GeonBit.UI/themes/lowres/textures/progressbar.png</SourceFile>
-  <SourceTime>2019-03-18T16:53:21.1315825-05:00</SourceTime>
-  <DestFile>C:/Users/dan19/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/lowres/textures/progressbar.xnb</DestFile>
-  <DestTime>2019-03-18T19:37:40.0768447-05:00</DestTime>
+  <SourceFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/GeonBit.UI/themes/lowres/textures/progressbar.png</SourceFile>
+  <SourceTime>2019-03-22T01:28:02.0651471-05:00</SourceTime>
+  <DestFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/lowres/textures/progressbar.xnb</DestFile>
+  <DestTime>2019-03-29T12:16:50.0187684-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

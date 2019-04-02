@@ -60,13 +60,15 @@ namespace NVP.Screen
         }
         public override void Update(GameTime gameTime)
         {
-            _activeScreen?.Update(gameTime);
             _activeTransition?.Update(gameTime);
+            _activeScreen?.Update(gameTime);
+
         }
         public override void Draw(GameTime gameTime)
         {
-            _activeScreen?.Draw(gameTime);
             _activeTransition?.Draw(gameTime);
+            _activeScreen?.Draw(gameTime);
+
         }
     }
 }

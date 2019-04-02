@@ -23,7 +23,7 @@ namespace NVP.Screen.Screens
         public override void Initialize()
         {
             base.Initialize();
-            ExpandTransition transition = new ExpandTransition(GraphicsDevice, Color.White);
+            ExpandTransition transition = new ExpandTransition(GraphicsDevice, Color.White,4);
             LevelsN.AddRange(Enumerable.Range(1, 4).Select((int x) =>
             {
                 return new Button(string.Format("Nivel {0}", x)) { OnClick = (Entity e) => { UserInterface.Active.Clear(); ScreenManager.LoadScreen(new GameSelectedLevel(Game, x), transition); } };
@@ -32,8 +32,8 @@ namespace NVP.Screen.Screens
             {
                 return new Button(string.Format("Nivel {0}", x)) { OnClick = (Entity e) => { UserInterface.Active.Clear(); ScreenManager.LoadScreen(new GameSelectedLevel(Game, x + 4), transition); } };
             }));
-
-            HUD.Menu.CreateSelectionMenu("Niveles", 400, 400, LevelsN, LevelsP, offsetY: -30);
+            var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(Game.GraphicsDevice);
+            HUD.Menu.CreateSelectionMenu("Niveles", viewport.BoundingRectangle.Width / 1.5f, viewport.BoundingRectangle.Height / 1.20f, LevelsN, LevelsP, offsetY: -30);
         }
         public override void Draw(GameTime gameTime)
         {

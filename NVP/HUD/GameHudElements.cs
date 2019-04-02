@@ -14,49 +14,31 @@ namespace NVP.HUD
 {
     public class GameHudElements
     {
-        public ProgressBar Life { get; set; }
-        public Panel ScreenTower { get; set; }
-        public 
-
-        void CreateLifeBar()
+     public static void TowerSelectionHUD(Texture2D[] textures, Action[] action)
         {
-            Life = new ProgressBar(0, 100, Anchor.TopRight, new Vector2(-50,0));
-            Life.Value = 100;
-            
-        }
-        public ProgressBar CreateObjectLifeBar()
-        {
-            throw new NotImplementedException();
-        }
-        public void CreateScreenTowerSelection(IList<Texture2D> images, IList<Action> actions)
-        {
-            Panel panel = new Panel(new Vector2(200, 40), PanelSkin.Fancy, Anchor.TopLeft);
-            foreach (var image in images)
+            Panel panel = new Panel(new Vector2(640, 100), PanelSkin.Fancy, Anchor.TopCenter);
+            panel.AddChild(new Paragraph("",Anchor.AutoInlineNoBreak, new Vector2(20,100)));
+            foreach(Texture2D T2D in textures)
             {
-                var b = new Button() {
-                    OnClick = (Entity e) => {actions.ElementAt(images.IndexOf(image)); }
-                };
-                panel.AddChild(b.AddChild(new Image(image, anchor: Anchor.AutoInlineNoBreak)));
-            }
-            ScreenTower = panel;
-        }
-        public void CreateOptionsButtons(Image select)
-        {
-            Button button = new Button();
-            button.AddChild(select);
-        }
-        public void CreateItemBag(IList<Texture2D> images, IList<Action> actions)
-        {
-            Panel panel = new Panel(new Vector2(100, 40), PanelSkin.Fancy, Anchor.BottomRight);
-            foreach (var image in images)
-            {
-                var b = new Button()
+                Button button = new Button
                 {
-                    OnClick = (Entity e) => { actions.ElementAt(images.IndexOf(image)); }
+                    OnClick = btn => action.ElementAt(textures.ToList().IndexOf(T2D)),
+                    Size = new Vector2(60,60),
+                    Anchor = Anchor.AutoInlineNoBreak
                 };
-                panel.AddChild(b.AddChild(new Image(image, anchor: Anchor.AutoInlineNoBreak)));
+                button.AddChild(new Image(T2D,new Vector2(T2D.Bounds.Width,T2D.Bounds.Height), drawMode: ImageDrawMode.Panel, anchor: Anchor.Center));
+                panel.AddChild(button);
+                }
+
+            
+            RichParagraphStyleInstruction.AddInstruction("BOLD_GOLD", new RichParagraphStyleInstruction(fillColor: Color.Gold, fontStyle: FontStyle.Bold));
+            panel.AddChild(new Image(textures[1], new Vector2(textures[1].Bounds.Width, textures[1].Bounds.Height), anchor: Anchor.AutoInlineNoBreak, offset: new Vector2(10,10)));
+            panel.AddChild(new RichParagraph(@"{{BOLD_GOLD}}   6000", Anchor.AutoInlineNoBreak));
+
+            UserInterface.Active.AddEntity(panel);
+
+
             }
         }
-
     }
-}
+

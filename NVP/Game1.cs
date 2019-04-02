@@ -10,14 +10,14 @@ namespace NVP
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager Graphics;
         SpriteBatch spriteBatch;
         ScreenManager Screen;
+
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);
+            Graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-       
             Components.Add(Screen = new ScreenManager());
         }
 
@@ -31,6 +31,7 @@ namespace NVP
         {
             // TODO: Add your initialization logic here
             base.Initialize();
+
             UserInterface.Initialize(Content);
             Screen.Initialize();
         }
@@ -79,9 +80,10 @@ namespace NVP
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            UserInterface.Active.Draw(spriteBatch);
             Screen.Draw(gameTime);
             // TODO: Add your drawing code here
-            UserInterface.Active.Draw(spriteBatch);
+
             base.Draw(gameTime);
         }
     }

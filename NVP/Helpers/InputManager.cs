@@ -37,7 +37,7 @@ namespace NVP.Helpers
             gamePad.PlayerIndex = PlayerIndex.One;
             gamePad.VibrationEnabled = false;
             mouseListener.ViewportAdapter = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(game.GraphicsDevice);
-            mouseListener.DoubleClickMilliseconds = int.MaxValue;
+
             mouseListener.DragThreshold = 40;
             #endregion
             #region Poniendolos en lista

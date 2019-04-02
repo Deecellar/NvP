@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="132" height="116" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="15">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="132" height="116" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="15">
  <tileset firstgid="1" name="Tileset" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="Tileset.png" width="256" height="256"/>
  </tileset>
@@ -15320,7 +15319,7 @@
    <tile/>
   </data>
  </layer>
- <objectgroup id="2" name="Capa de Objetos 1">
+ <objectgroup id="2" name="Objetos">
   <object id="1" name="Camino" x="208.026" y="80" width="335.992" height="47.9649"/>
   <object id="5" name="Camino" x="208.042" y="271.982" width="335.992" height="47.9649"/>
   <object id="6" name="Camino" x="208.004" y="464.059" width="335.992" height="47.9649"/>
