@@ -2524,3 +2524,7 @@ C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\Content\Mapas\le
 C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\Content\Mapas\level7.xnb
 C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\Content\Mapas\level8.xnb
 C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\StateMachine.dll
+C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\NVP.exe.config
+C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\Spritesheet.dll
+C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\System.ValueTuple.dll
+C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\System.ValueTuple.xml

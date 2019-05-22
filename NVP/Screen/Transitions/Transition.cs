@@ -18,7 +18,7 @@ namespace NVP.Screen.Transitions
 
         protected Transition(float duration)
         {
-            Duration = duration;
+            Duration = 0;
             _halfDuration = Duration / 2f;
         }
 

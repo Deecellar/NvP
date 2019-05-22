@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended;
-using MonoGame.Extended.Input;
 using MonoGame.Extended.Input.InputListeners;
 using MonoGame.Extended.Tiled;
-using MonoGame.Extended.Tiled.Graphics;
-using NVP.Helpers;
 using NVP.Entities;
-using NVP.HUD;
 using NVP.Entities.Enemies;
-using NVP.Entities.Towers;
+using NVP.Helpers;
+using NVP.HUD;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NVP.Screen
 {
@@ -23,7 +17,7 @@ namespace NVP.Screen
     {
         // The tile map
         private TiledHelper tiledHelper;
-
+        private CollisionHelper collisionHelper = new CollisionHelper();
         private Camera2D camera;
 
         private SpriteBatch spriteBatch;
@@ -43,31 +37,41 @@ namespace NVP.Screen
         float delta = 0f;
         private int TowerSelected = 0;
         private int Life = 100;
-
+        private int Money = 6000;
         private int round = 1;
         private bool NextRound = false;
 
-        int counter = 1;
-        int limit = 50;
-        float countDuration = 40f; 
-        float currentTime = 0f;
+
+        private List<Bullet> bulletsToRemove;
+        private List<Bullet> bulletsTower;
+
+        public GameHudElements Hud { get; }
+
+        private List<Bullet> bulletsEnemies;
+
         public GameSelectedLevel(Game game, int level) : base(game)
         {
             GeonBit.UI.UserInterface.Active.Dispose();
             GeonBit.UI.UserInterface.Initialize(Content);
-
             var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(GraphicsDevice);
             camera = new Camera2D(viewport);
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            MoneyManager.Initialize(Money, false, Game, spriteBatch);
+
             tiledHelper = new TiledHelper(game, camera);
             ChargeLevel(level);
             Texture2D[] texture2Ds = new Texture2D[] { Content.Load<Texture2D>("Sprites/Towers/32"), Content.Load<Texture2D>("Sprites/Towers/32"), Content.Load<Texture2D>("Sprites/Towers/32"), Content.Load<Texture2D>("Sprites/Towers/32") };
-            Action[] actions = new Action[] { () => { TowerSelected = 1; }, () => { TowerSelected = 2; }, () => { TowerSelected = 3; }, () => { TowerSelected = 4; } };
+            Action[] actions = new Action[] { () => { TowerSelected = 0; }, () => { TowerSelected = 1; }, () => { TowerSelected = 2; }, () => { TowerSelected = 3; } };
             InputManager = new InputManager(game);
             InputManager.MouseFunc = MouseFunc;
             InputManager.KeyboardFunc = KeyboardFunc;
             InputManager.MouseDragFunc = MouseDragFunc;
-            GameHudElements.TowerSelectionHUD(texture2Ds, actions);
+            Hud = new GameHudElements();
+            Hud.TowerSelectionHUD(texture2Ds, actions);
+
+            bulletsEnemies = new List<Bullet>();
+            bulletsToRemove = new List<Bullet>();
+            bulletsTower = new List<Bullet>();
 
         }
 
@@ -80,19 +84,19 @@ namespace NVP.Screen
                 {
                     Caminos.Add(new RectangleF(obj.Position.ToPoint(), obj.Size));
                 }
-                else if (obj.Name == "Interseccion")
+                if (obj.Name == "Interseccion")
                 {
                     intersections.Add(new Intersection(obj.Position, new RectangleF(obj.Position, obj.Size), Convert.ToChar(obj.Properties.Where(x => x.Key == "Interseccion").First().Value)));
                 }
-                else if (obj.Name == "Interseccion p")
+                if (obj.Name == "Interseccion p")
                 {
                     intersectionsProb.Add(new InstersectionP(obj.Position, new RectangleF(obj.Position, obj.Size), obj.Properties.Where(x => x.Key == "Interseccion").First().Value, Convert.ToSingle(obj.Properties.Where(x => x.Key == "probabilidad").First().Value)));
                 }
-                else if (obj.Name == "spawner")
+                if (obj.Name == "spawner")
                 {
                     spawners.Add(new Spawner(Game, spriteBatch, obj.Position, Convert.ToChar(obj.Properties.Where(x => x.Key == "Direccion").First().Value), obj.Properties.Where(x => x.Key == "cantidad enemigos").First().Value.Split(',').Select(x => int.Parse(x)).ToArray(), Convert.ToInt32(obj.Properties.Where(x => x.Key == "cantidad rondas").First().Value), true));
                 }
-                else if (obj.Name == "fin")
+                if (obj.Name == "fin")
                 {
                     Final.Add(new CircleF(obj.Position.ToPoint(), 4));
                 }
@@ -120,12 +124,22 @@ namespace NVP.Screen
             {
                 clickcable |= item.Bounds.Contains(pos);
             }
-            if (args.Button == MouseButton.Left)
+            if (args.Button == MouseButton.Left && !clickcable)
             {
                 Vector2 Position = pos.ToVector2();
-                Tower tower = new Entities.Towers.Knight(Game, Position, Content.Load<Texture2D>("Sprites/Towers/32"), spriteBatch);
-                towers.Add(tower);
+                Tower tower;
+                if (MoneyManager.PayTower(TowerSelected, out tower, Position))
+                {
+                    tower.SetBullets(ref bulletsTower);
+                    towers.Add(tower);
+                    Hud.Money.Text = @"{{BOLD_GOLD}}   " + MoneyManager.Money;
+                }
+
             }
+
+
+
+
         }
 
         private void KeyboardFunc(KeyboardEventArgs args)
@@ -151,6 +165,14 @@ namespace NVP.Screen
             {
                 item.Draw(gameTime);
             }
+            foreach (var item in bulletsEnemies)
+            {
+                item.Draw(gameTime);
+            }
+            foreach (var item in bulletsTower)
+            {
+                item.Draw(gameTime);
+            }
             spriteBatch.End();
             GeonBit.UI.UserInterface.Active.Draw(new SpriteBatch(GraphicsDevice));
 
@@ -165,15 +187,12 @@ namespace NVP.Screen
             delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
             foreach (var item in spawners)
             {
-                if(!item.SpawnEnemies(round, ref enemies))
-                {
-                    if(round <= item.Rondas)
-                    NextRound = true;
-                }
+                item.Spawn(gameTime, ref enemies);
+
             }
             List<Entity> ent = new List<Entity>();
             ent = ent.Concat(enemies).ToList();
-            ent = ent.Concat(towers).ToList() ;
+            ent = ent.Concat(towers).ToList();
             foreach (var item in towers)
             {
                 if (item.Life < 0)
@@ -186,29 +205,41 @@ namespace NVP.Screen
             }
             foreach (var item in enemies)
             {
-                if(item.Life < 0)
+                if (item.Life < 0)
                 {
                     enemiesToRemove.Add(item);
-                    item.Dispose();
                 }
                 item.GetEntities(ent.ToArray());
                 foreach (var inter in intersections)
                 {
                     inter.ChangeDirection(item);
-            }
+                }
                 foreach (var inter in intersectionsProb)
                 {
                     inter.ChangeDirection(item);
                 }
                 foreach (var f in Final)
                 {
-                    if (f.Intersects(item.BoundingCircle))
+                    if (f.Intersects(item.Collider))
                     {
-                        enemiesToRemove.Add(item); 
-                        Life -= item.Daño;
+                        enemiesToRemove.Add(item);
+                        Life -= item.Dano;
                     }
                 }
                 item.Update(gameTime);
+            }
+            List<Bullet> bullets = new List<Bullet>();
+            bullets = bullets.Concat(bulletsEnemies).ToList();
+            bullets = bullets.Concat(bulletsTower).ToList();
+
+            foreach (var item in bullets)
+            {
+                item.Update(gameTime);
+                if (item.IsOutsideHisSpawner || item.Impacted)
+                {
+                    bulletsToRemove.Add(item);
+                }
+
             }
 
             foreach (var item in TowerToRemove)
@@ -221,26 +252,24 @@ namespace NVP.Screen
                 enemies.Remove(item);
                 item.Dispose();
             }
-
-            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds; 
+            foreach (var item in bulletsToRemove)
             {
-                counter++;
-                currentTime -= countDuration; 
-            }
-            if (counter >= limit)
-            {
-
-                counter = 0;
-                if (NextRound)
+                if (bulletsEnemies.Contains(item))
                 {
-                    round++;
-                    NextRound = false;
+                    bulletsEnemies.Remove(item);
                 }
-            }
+                else
+                {
+                    bulletsTower.Remove(item);
 
+                }
+                item.Dispose();
+            }
+            collisionHelper.Initialize(new List<ICollisionableObject>().Concat(enemies).Concat(bullets).Concat(towers).ToList());
             TowerToRemove.Clear();
             enemiesToRemove.Clear();
-            
+            bulletsToRemove.Clear();
+            collisionHelper.Update();
         }
     }
 }

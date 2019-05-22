@@ -22,7 +22,7 @@ public    class Intersection
 
         public void ChangeDirection(Enemies.Enemy enemy)
         {
-            if (enemy.BoundingCircle.Contains(Bounds.ClosestPointTo(Bounds.Center)))
+            if (enemy.Collider.Contains(Bounds.ClosestPointTo(Bounds.Center)))
             {
                 enemy.DirectionToGo(Direction);
             }

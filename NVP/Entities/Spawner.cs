@@ -1,10 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+using MonoGame.Extended;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NVP.Entities
 {
@@ -12,22 +11,23 @@ namespace NVP.Entities
     {
         private Vector2 Position { get; set; }
         private char Direction { get; set; }
-        private int[] Enemigos { get; set; }
+        public int[] Enemigos { get; set; }
         public int Rondas { get; set; }
-        private string[] Normal = new string[]
+        public bool NextRound { get; private set; }
 
-        {
-            "Archer", "Knight", "Priest", "TownsFolk"
-        };
-        private string[] Paranormal = new string[]
-        {
-            "Zombi", "Ghost", "Lycanthrope", "Cultist"
-        };
+        private Dictionary<string, int> Normal = new Dictionary<string, int>();
+        private Dictionary<string, int> Paranormal = new Dictionary<string, int>();
         private Game Game;
         private SpriteBatch Sprite;
         private bool IsNormal = true;
 
-        public Spawner(Game game, SpriteBatch sprite, Vector2 position, char direction, int[] enemigos,  int rondas, bool isNormal)
+        const int cooldown = 10;
+        bool cooldownBewteenEnemies = false;
+        const float enemiesCooldown = 2.5f;
+        float timeBetweenEnemies = 0;
+        float timeElapsed = 0;
+
+        public Spawner(Game game, SpriteBatch sprite, Vector2 position, char direction, int[] enemigos, int rondas, bool isNormal)
         {
             Position = position;
             Direction = direction;
@@ -36,37 +36,101 @@ namespace NVP.Entities
             IsNormal = isNormal;
             Game = game;
             Sprite = sprite;
+            Normal.Add("TownsFolk", 9);
+            Normal.Add("Archer", 7);
+            Normal.Add("Knight", 5);
+            Normal.Add("Priest", 4);
+            Paranormal.Add("Zombi", 8);
+            Paranormal.Add("Ghost", 6);
+            Paranormal.Add("Lycanthrope", 4);
+            Paranormal.Add("Cultist", 3);
+        }
+
+        public void Spawn(GameTime gameTime, ref List<Enemies.Enemy> entitiees)
+        {
+            if (NextRound)
+            {
+                this.Rondas -= 1;
+                NextRound = false;
+            }
+            if (this.Rondas > 0)
+            {
+
+                if (this.Enemigos[this.Enemigos.Length - this.Rondas] <= 0)
+                {
+                    timeElapsed += gameTime.GetElapsedSeconds();
+                    if (timeElapsed > cooldown)
+                    {
+                        NextRound = true;
+                        timeElapsed = 0;
+                    }
+                }
+                else
+                {
+                    if (cooldownBewteenEnemies)
+                    {
+                        this.Enemigos[this.Enemigos.Length - this.Rondas] -= 1;
+                        this.SpawnEnemies(ref entitiees);
+                        cooldownBewteenEnemies = false;
+                    }
+                    timeBetweenEnemies += gameTime.GetElapsedSeconds();
+                    if (timeBetweenEnemies >= enemiesCooldown)
+                    {
+                        cooldownBewteenEnemies = true;
+                        timeBetweenEnemies = 0;
+                    }
+                }
+            }
 
         }
-        
-        public bool SpawnEnemies(int round,ref List<Enemies.Enemy> entities)
+        public bool SpawnEnemies(ref List<Enemies.Enemy> entities)
         {
-            Random r = new Random();
+            FastRandom r = new FastRandom();
+            int max;
+            int target;
+            var done = false;
             if (IsNormal)
             {
-                if(Enemigos[round - 1] < 0)
+                max = Paranormal.Values.Sum();
+                target = r.Next(1, max);
+                foreach (var a in Paranormal)
                 {
-                    Rondas--;
-                    return false;
+                    if (done)
+                    {
+                        return done;
+                    }
+                    if (target <= a.Value)
+                    {
+                        Debug.WriteLine("Se ha invocado un " + a.Key);
+                        entities.Add(GetEnemy(a.Key, out done));
+                    }
+                    target -= a.Value;
                 }
-                Enemigos[round - 1]--;
-                
-                entities.Add(GetEnemy(Normal[r.Next(0, Normal.Length - 1)]));
-                return true;
             }
             else
             {
-                if (Enemigos[round - 1] <  0)
+                max = Normal.Values.Sum();
+                target = r.Next(1, max);
+                foreach (var a in Normal)
                 {
-                    Rondas--;
-                    return false;
+                    if (done)
+                    {
+                        return done;
+                    }
+                    if (target <= a.Value)
+                    {
+                        entities.Add(GetEnemy(a.Key, out done));
+                    }
+                    target -= a.Value;
                 }
-                Enemigos[round - 1]--;
-                entities.Add(GetEnemy(Paranormal[r.Next(0, Normal.Length - 1)]));
-                return true;
+
+
             }
+            return done;
         }
-        private Enemies.Enemy GetEnemy(string enemy)
+
+
+        private Enemies.Enemy GetEnemy(string enemy, out bool done)
         {
             Enemies.Enemy Enemy = new Enemies.Enemy(Game, Position, Game.Content.Load<Texture2D>("Sprites/Towers/32"), Sprite); ;
             switch (enemy)
@@ -97,6 +161,7 @@ namespace NVP.Entities
                     break;
             }
             Enemy.DirectionToGo(Direction);
+            done = true;
             return Enemy;
         }
     }

@@ -46,7 +46,7 @@ namespace NVP.Screen.Screens
                 }
             });
             var viewport =new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(Game.GraphicsDevice);
-            Menu.CreateMenu("Menu", viewport.BoundingRectangle.Width /2, viewport.BoundingRectangle.Height /1.5f, buttons);
+            Menu.CreateMenu("Menu", viewport.BoundingRectangle.Width /2, viewport.BoundingRectangle.Height / 1.5f, buttons);
         }
         public override void Draw(GameTime gameTime)
         {

@@ -16,6 +16,7 @@ namespace NVP.HUD
         {
             Vector2 vector2 = new Vector2(offsetX, offsetY);
             Panel panel = new Panel(new Vector2(x, y), panelSkin, anchor, vector2);
+            panel.PanelOverflowBehavior = PanelOverflowBehavior.VerticalScroll;
             panel.AddChild(new Header(title));
             panel.AddChild(new HorizontalLine());
             foreach (Button button in buttons)
@@ -29,14 +30,14 @@ namespace NVP.HUD
         {
             Vector2 vector2 = new Vector2(offsetX, offsetY);
             Panel panel = new Panel(new Vector2(x, y), panelSkin, anchor, vector2);
+
+
             PanelTabs tabs = new PanelTabs(panelSkin);
+            UserInterface.Active.AddEntity(new Header("SELECCION DE NIVELES", Anchor.TopCenter, new Vector2(0,16)));
             var tab1 = tabs.AddTab("Normal", panelSkin);
             var tab2 = tabs.AddTab("Paranormal", panelSkin);
-
-            tab1.panel.AddChild(new Header(title + " de Normales"));
-            tab2.panel.AddChild(new Header(title + " Sobrenaturales"));
-            tab1.panel.AddChild(new HorizontalLine());
-            tab2.panel.AddChild(new HorizontalLine());
+            tab1.panel.PanelOverflowBehavior = PanelOverflowBehavior.VerticalScroll;
+            tab2.panel.PanelOverflowBehavior = PanelOverflowBehavior.VerticalScroll;
 
             foreach (Button button in levelsN)
             {

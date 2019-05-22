@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using MonoGame.Extended;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using MonoGame.Extended;
 
 namespace NVP.Entities
 {
@@ -14,11 +12,13 @@ namespace NVP.Entities
         public BoundingRectangle Bounds { get; set; }
         public string[] Direction { get; set; }
         public float Probability { get; set; }
+        List<Entity> EntitysThatPassed = new List<Entity>();
         public InstersectionP(Vector2 pos, RectangleF bound, string dir, float probability)
         {
             Position = pos;
             Bounds = bound;
             Direction = dir.Split(',');
+            Probability = probability / 10;
         }
 
         public char GetDirection()
@@ -26,7 +26,7 @@ namespace NVP.Entities
             Random random = new Random();
             var LastValue = Direction.Last();
             float randomV = random.NextSingle();
-            if(randomV <= Probability)
+            if (randomV <= Probability)
             {
                 return Convert.ToChar(LastValue);
             }
@@ -37,8 +37,9 @@ namespace NVP.Entities
         }
         public void ChangeDirection(Enemies.Enemy enemy)
         {
-            if (enemy.BoundingCircle.Contains(Bounds.Center))
+            if (enemy.Collider.Contains(Bounds.ClosestPointTo(Bounds.Center)) && !EntitysThatPassed.Contains(enemy))
             {
+                EntitysThatPassed.Add(enemy);
                 enemy.DirectionToGo(GetDirection());
             }
         }

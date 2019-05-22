@@ -303,7 +303,7 @@
   </object>
   <object id="40" name="Camino" x="321.028" y="1104.19" width="303.277" height="49.8073"/>
  </objectgroup>
- <objectgroup id="5" name="Camara">
+ <objectgroup id="5" name="Camara" visible="0">
   <object id="41" name="Camara" x="320.011" y="591.992" width="976.171" height="656.068"/>
  </objectgroup>
 </map>

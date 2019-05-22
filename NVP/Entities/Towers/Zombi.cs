@@ -13,7 +13,7 @@ namespace NVP.Entities.Towers
         public Zombi(Game game, Vector2 position, Texture2D texture, SpriteBatch sprite) : base(game, position, texture, sprite)
         {
             Life = 20;
-            Daño = (int)(Life * 1.5f);
+            Dano = (int)(Life * 1.5f);
         }
     }
 }

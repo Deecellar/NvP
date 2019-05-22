@@ -55,6 +55,12 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\InstersectionP.cs" />
     <Compile Include="Entities\Intersection.cs" />
+    <Compile Include="Entities\PowerUpSpawner.cs" />
+    <Compile Include="Entities\PowerUps\Demon.cs" />
+    <Compile Include="Entities\PowerUps\Alucard.cs" />
+    <Compile Include="Entities\PowerUps\Angel.cs" />
+    <Compile Include="Entities\PowerUps\Dragon.cs" />
+    <Compile Include="Entities\PowerUps\PowerUp.cs" />
     <Compile Include="Entities\Spawner.cs" />
     <Compile Include="Entities\Towers\Archer.cs" />
     <Compile Include="Entities\Towers\Cultist.cs" />
@@ -66,7 +72,13 @@
     <Compile Include="Entities\Towers\TownsFolk.cs" />
     <Compile Include="Entities\Towers\Zombi.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Helpers\AnimationHelper.cs" />
+    <Compile Include="Helpers\CollisionHelper.cs" />
+    <Compile Include="Helpers\IAnimatable.cs" />
     <Compile Include="Helpers\InputManager.cs" />
+    <Compile Include="Helpers\CollisionableObject.cs" />
+    <Compile Include="Helpers\MoneyManager.cs" />
+    <Compile Include="Helpers\SpriteAnimatorHelper.cs" />
     <Compile Include="Helpers\TiledHelper.cs" />
     <Compile Include="HUD\GameHudElements.cs" />
     <Compile Include="HUD\Menu.cs" />
@@ -109,10 +121,16 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Spritesheet, Version=1.0.6367.578, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spritesheet.1.0.1\lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+monomac+xamarinmac\Spritesheet.dll</HintPath>
+    </Reference>
     <Reference Include="StateMachine, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StateMachine.1.2.0.1\lib\portable45-net45+win8+wpa81\StateMachine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +183,7 @@
       <Link>MonoGame.Framework.dll.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="Content\GeonBit.UI\themes\editor\fonts\Bold.spritefont" />
     <None Include="Content\GeonBit.UI\themes\editor\fonts\Italic.spritefont" />

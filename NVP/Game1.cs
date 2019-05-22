@@ -34,6 +34,8 @@ namespace NVP
 
             UserInterface.Initialize(Content);
             Screen.Initialize();
+            UserInterface.Active.UseRenderTarget = true;
+            UserInterface.Active.IncludeCursorInRenderTarget = false;
         }
 
         /// <summary>
@@ -79,11 +81,14 @@ namespace NVP
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
             UserInterface.Active.Draw(spriteBatch);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            
             Screen.Draw(gameTime);
-            // TODO: Add your drawing code here
 
+            UserInterface.Active.DrawMainRenderTarget(spriteBatch);
+
+            // TODO: Add your drawing code here
             base.Draw(gameTime);
         }
     }

@@ -27,7 +27,7 @@ Note:
     <ForceAlignCenter>false</ForceAlignCenter>
     <!-- Font style: Regular, Bold or Italic -->
     <FontStyle>Regular</FontStyle>
-    <!-- For lists and dropbox - the selected item background color -->
+    <!-- For lists and dropbox - the selected this background color -->
     <SelectedHighlightColor>00000000</SelectedHighlightColor>
     <!-- Shadow color (00000000) for no shadow -->
     <ShadowColor>00000000</ShadowColor>

@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +33,7 @@ namespace NVP.Screen.Screens
                 return new Button(string.Format("Nivel {0}", x)) { OnClick = (Entity e) => { UserInterface.Active.Clear(); ScreenManager.LoadScreen(new GameSelectedLevel(Game, x + 4), transition); } };
             }));
             var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(Game.GraphicsDevice);
-            HUD.Menu.CreateSelectionMenu("Niveles", viewport.BoundingRectangle.Width / 1.5f, viewport.BoundingRectangle.Height / 1.20f, LevelsN, LevelsP, offsetY: -30);
+            HUD.Menu.CreateSelectionMenu("Niveles", 400, 300, LevelsN, LevelsP, offsetY: -30);
         }
         public override void Draw(GameTime gameTime)
         {
