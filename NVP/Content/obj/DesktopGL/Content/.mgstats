@@ -1,3 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Enemies/sprites.png","C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Sprites/Enemies/sprites.xnb","TextureProcessor","Texture2DContent",1205,19681,2,164638
-"C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Enemies/sprites.xml","C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Sprites/Enemies/sprites.xnb","PassThroughProcessor","Dictionary<string, Rectangle>",1438,1149,0,4451431

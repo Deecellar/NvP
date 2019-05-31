@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
 using NVP.Screen.Transitions;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
 
 namespace NVP.Screen
 {
@@ -47,28 +42,30 @@ namespace NVP.Screen
         {
             _activeScreen?.Initialize();
             _isInitializated = true;
-        } 
+        }
+
         protected override void LoadContent()
         {
             _activeScreen?.LoadContent();
             _isLoaded = true;
         }
+
         protected override void UnloadContent()
         {
             _activeScreen?.UnloadContent();
             _isLoaded = false;
         }
+
         public override void Update(GameTime gameTime)
         {
             _activeTransition?.Update(gameTime);
             _activeScreen?.Update(gameTime);
-
         }
+
         public override void Draw(GameTime gameTime)
         {
             _activeTransition?.Draw(gameTime);
             _activeScreen?.Draw(gameTime);
-
         }
     }
 }

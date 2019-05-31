@@ -4,7 +4,8 @@ namespace NVP.Helpers
 {
     public class CollisionHelper
     {
-        List<ICollisionableObject> Collisionables = new List<ICollisionableObject>();
+        private List<ICollisionableObject> Collisionables = new List<ICollisionableObject>();
+
         public void Initialize(params ICollisionableObject[] collisionableObjects)
         {
             foreach (var c in collisionableObjects)
@@ -12,12 +13,11 @@ namespace NVP.Helpers
                 Collisionables.Add(c);
             }
         }
+
         public void Initialize(List<ICollisionableObject> collisionableObjects)
         {
             Collisionables = collisionableObjects;
         }
-
-
 
         public void Update()
         {
@@ -36,6 +36,5 @@ namespace NVP.Helpers
                 }
             }
         }
-
     }
 }

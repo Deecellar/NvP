@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Audio/Songs/rim_260kbps.mp3</SourceFile>
+  <SourceTime>2019-05-23T09:59:06.2669119-05:00</SourceTime>
+  <DestFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Audio/Songs/rim_260kbps.xnb</DestFile>
+  <DestTime>2019-05-23T16:00:49.4068302-05:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Audio/Songs/rim_260kbps.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

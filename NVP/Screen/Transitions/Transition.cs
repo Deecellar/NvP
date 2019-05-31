@@ -1,11 +1,6 @@
-﻿using GeonBit.UI;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NVP.Screen.Transitions
 {
@@ -29,6 +24,7 @@ namespace NVP.Screen.Transitions
         public float Value => MathHelper.Clamp(_currentSeconds / _halfDuration, 0f, 1f);
 
         public event EventHandler StateChanged;
+
         public event EventHandler Completed;
 
         public void Update(GameTime gameTime)
@@ -46,6 +42,7 @@ namespace NVP.Screen.Transitions
                         StateChanged?.Invoke(this, EventArgs.Empty);
                     }
                     break;
+
                 case TransitionState.In:
                     _currentSeconds -= elapsedSeconds;
 
@@ -54,6 +51,7 @@ namespace NVP.Screen.Transitions
                         Completed?.Invoke(this, EventArgs.Empty);
                     }
                     break;
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }

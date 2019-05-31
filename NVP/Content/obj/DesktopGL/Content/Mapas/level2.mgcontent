@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Mapas/level2.tmx</SourceFile>
-  <SourceTime>2019-05-14T18:44:37.1309452-05:00</SourceTime>
+  <SourceTime>2019-05-29T10:20:18.9835042-05:00</SourceTime>
   <DestFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/Mapas/level2.xnb</DestFile>
-  <DestTime>2019-05-14T18:44:56.4179754-05:00</DestTime>
+  <DestTime>2019-05-29T10:28:13.7348693-05:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2018-05-23T11:26:24-05:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>

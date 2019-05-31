@@ -4,6 +4,10 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/../../../../../Desktop/swosh-33.mp3</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/../../../../../Desktop/swosh-36.mp3</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Audio/Songs/determination.mp3</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Audio/Songs/rim_260kbps.mp3</File>
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/GeonBit.UI/themes/editor/effects/disabled.fx</File>
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/GeonBit.UI/themes/editor/effects/silhouette.fx</File>
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/GeonBit.UI/themes/editor/styles/Button-Default.xml</File>
@@ -590,11 +594,75 @@
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Mapas/level7.tmx</File>
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Mapas/level8.tmx</File>
     <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Mapas/Tileset.png</File>
-    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Enemies/sprites.png</File>
-    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Enemies/sprites.xml</File>
-    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Towers/32.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/Arrow.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/CultistActivate.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/Fang.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/GhostBullet.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/Jabelin.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/Magic.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/PriestActivate.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Balas/ZombeBullet.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Cuerpo/Base1.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Cuerpo/Base2.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Cuerpo/Base3.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Money.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Healer.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Magician.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Ninjar.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Ranger.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Townsfolk.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Female/Female-Warrior.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Male/Male-archer.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Male/Male-Healer.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Pelo/Male/Male-warrior.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Premade/Female-Zombie.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Premade/Licantropo.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Premade/Male-Zombie.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Archer.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Armor.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/CultistRobe.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Female/Female-TownFolk.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Male/Male-TownFolk.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Orden de la cruz descentrada.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/PriestRobe.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/Ropa/Vampiro.png</File>
+    <File>C:/Users/Lenovo/source/repos/NvP/NVP/Content/Sprites/unknown.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Audio/Effects/swosh-33.mp3</File>
+    <File>Audio/Effects/swosh-36.mp3</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/GeonBit.UI/themes/hd/effects/disabled.fx</SourceFile>
-  <SourceTime>2019-03-22T01:28:01.566923-05:00</SourceTime>
+  <SourceTime>2019-05-30T13:45:36.9649552-05:00</SourceTime>
   <DestFile>C:/Users/Lenovo/source/repos/NvP/NVP/Content/bin/DesktopGL/Content/GeonBit.UI/themes/hd/effects/disabled.xnb</DestFile>
-  <DestTime>2019-03-29T12:16:28.8766714-05:00</DestTime>
+  <DestTime>2019-05-30T15:08:56.5487024-05:00</DestTime>
   <Importer>EffectImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>EffectProcessor</Processor>

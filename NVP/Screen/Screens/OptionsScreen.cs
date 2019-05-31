@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeonBit.UI;
+﻿using GeonBit.UI;
 using GeonBit.UI.Entities;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace NVP.Screen.Screens
 {
     public class OptionsScreen : GameScreen
     {
-
         public OptionsScreen(Game game) : base(game)
         {
         }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -33,14 +28,13 @@ namespace NVP.Screen.Screens
             });
             HUD.Menu.CreateMenu("Opciones", 400, 400, buttons);
         }
+
         public override void Draw(GameTime gameTime)
         {
-
         }
 
         public override void Update(GameTime gameTime)
         {
-
         }
     }
 }

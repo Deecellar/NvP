@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MonoGame.Extended.Tiled;
-using MonoGame.Extended.Tiled.Graphics;
-using MonoGame.Extended;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended.Tiled.Graphics;
 
 namespace NVP.Helpers
 {
-    class TiledHelper
+    internal class TiledHelper
     {
         public TiledMap Map { get; set; }
         public Game Game { get; }
@@ -32,12 +27,13 @@ namespace NVP.Helpers
         {
             Map = Content.Load<TiledMap>(path);
             maprenderer = new TiledMapRenderer(GraphicsDevice);
-
         }
+
         public void Update(GameTime gameTime)
         {
             maprenderer.Update(Map, gameTime);
         }
+
         public void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Blue);

@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bullet">
+    <Position X="2" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAIAAAgAAACAAAAAAAAAAAAAAKAAAAAAMAgA=</HashCode>
+      <FileName>Entities\Bullet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tower">
+    <Position X="12" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAgAAAAYAAAwAIAAAAABAAACAEAAAgBAAAAAAEAAA=</HashCode>
+      <FileName>Entities\Towers\Tower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Camino">
+    <Position X="11.5" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Entities\Camino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Entity">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EYYBEAAAACAAAwAiEAAAAAAACAgAABgQJAEAAAABACA=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NVP.Entities.InstersectionP">
+    <Position X="20.25" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAgACAAAIAAAAAAACAAgAAAAAAAAgA=</HashCode>
+      <FileName>Entities\InstersectionP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Intersection">
+    <Position X="22" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgACAAAAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Entities\Intersection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Spawner">
+    <Position X="34.25" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAACAAACAAAAAgACEEAAAASAgIAoAQACBAAAAQAAA=</HashCode>
+      <FileName>Entities\Spawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Archer">
+    <Position X="21.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Archer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Cultist">
+    <Position X="26" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Cultist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Enemy">
+    <Position X="30" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAgAAAAYAAAwAIACAAAAAAAAAEAAAgBAAAAAAEAAA=</HashCode>
+      <FileName>Entities\Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Ghost">
+    <Position X="28.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Knight">
+    <Position X="30.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Knight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Lycanthrope">
+    <Position X="32.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Lycanthrope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Priest">
+    <Position X="35" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Priest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.TownsFolk">
+    <Position X="37.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\TownsFolk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Enemies.Zombi">
+    <Position X="23.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Zombi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Archer">
+    <Position X="5.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Archer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Cultist">
+    <Position X="8" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Cultist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Ghost">
+    <Position X="10.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Knight">
+    <Position X="12.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Knight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Lycanthrope">
+    <Position X="14.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Lycanthrope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Priest">
+    <Position X="17" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Priest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.TownsFolk">
+    <Position X="19.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\TownsFolk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Entities.Towers.Zombi">
+    <Position X="3.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Towers\Zombi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Game1">
+    <Position X="15" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAABAAAAAAACAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Program">
+    <Position X="27.25" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Helpers.AnimationHelper&lt;T&gt;">
+    <Position X="9.75" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUgAAAAAAAgBgAgwIAAAAAAAAAAgAAQoAAgAAAAAAA=</HashCode>
+      <FileName>Helpers\AnimationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Helpers.CollisionHelper">
+    <Position X="13.25" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Helpers\CollisionHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Helpers.InputManager">
+    <Position X="18.5" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAwEAACgAAAAAAAAAAAKEAQAAAAAAAAEgAAAgI=</HashCode>
+      <FileName>Helpers\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Helpers.MoneyManager">
+    <Position X="25.5" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAQAAAAAAAAAAABAAAAAIBwAAAAAAAAA=</HashCode>
+      <FileName>Helpers\MoneyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Helpers.TiledHelper">
+    <Position X="36" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAhAAA4AAAAAAAACAAAgAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Helpers\TiledHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.HUD.GameHudElements">
+    <Position X="16.75" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAAAAABAQAACAAAAAABAAAAAAgEAQAACAAABAAA=</HashCode>
+      <FileName>HUD\GameHudElements.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.HUD.Menu">
+    <Position X="23.75" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>HUD\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Properties.Resources">
+    <Position X="30.75" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.GameScreen">
+    <Position X="20.25" Y="28" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Screen\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screen">
+    <Position X="20.25" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAACBAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Screen\Screen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NVP.Screen.ScreenManager">
+    <Position X="32.5" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQBEAAAAAAAAwAAAAAAAAAAAAAQAAAACAAAAAAgAAQ=</HashCode>
+      <FileName>Screen\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.GameSelectedLevel">
+    <Position X="14.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgYwQEIgIsIQQ0CAIEEQAAAADAAQAQABBABQMUABJCA=</HashCode>
+      <FileName>Screen\Screens\GameSelectedLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screens.GameoverScreen">
+    <Position X="16.75" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Screen\Screens\GameoverScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screens.GameSelectScreen">
+    <Position X="19" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Screen\Screens\GameSelectScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screens.MainMenuScreen">
+    <Position X="21.25" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Screen\Screens\MainMenuScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screens.OptionsScreen">
+    <Position X="23.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Screen\Screens\OptionsScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Screens.OptionsScreens.VideoScreen">
+    <Position X="25.75" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Screen\Screens\OptionsScreens\VideoScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Transitions.ExpandTransition">
+    <Position X="16.5" Y="55.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAABAAAAAAAAAAIAAgAAAAAA=</HashCode>
+      <FileName>Screen\Transitions\ExpandTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Transitions.FadeTransition">
+    <Position X="18.75" Y="55.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAABAAAAAAAAAAIAAgAAAAAA=</HashCode>
+      <FileName>Screen\Transitions\FadeTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NVP.Screen.Transitions.Transition">
+    <Position X="18" Y="50" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACACAgIAAAABAAACAAAAAAAAAAAgBAAAACA=</HashCode>
+      <FileName>Screen\Transitions\Transition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="NVP.Helpers.ICollisionableObject">
+    <Position X="37.75" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQIAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\CollisionableObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="NVP.Entities.Animations">
+    <Position X="39.5" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAQAAAEIAAAAAAAAAAQBAA=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NVP.Screen.Transitions.TransitionState">
+    <Position X="41.25" Y="68.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Screen\Transitions\Transition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

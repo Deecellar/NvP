@@ -3,39 +3,59 @@ using GeonBit.UI.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NVP.Helpers;
-using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace NVP.HUD
 {
     public class GameHudElements
     {
-        public RichParagraph Money { get; set; }
-        public void TowerSelectionHUD(Texture2D[] textures, Action[] action)
+        public RichParagraph Money { get; private set; }
+        public ProgressBar Life { get; private set; }
+        public Image PauseIcon { get; private set; }
+        public Panel PausedMenu { get; private set; }
+        public Panel WinMenuPanel { get; private set; }
+
+        public void TowerSelectionHUD(Rectangle Screen, double InitialLife, Game game, Panel buttons, Panel radioButtons)
         {
-            Panel panel = new Panel(new Vector2(640, 100), PanelSkin.Fancy, Anchor.TopCenter);
-            panel.AddChild(new Paragraph("", Anchor.AutoInlineNoBreak, new Vector2(20, 100)));
-            foreach (Texture2D T2D in textures)
-            {
-                Button button = new Button
-                {
-                    OnClick = btn => action.ElementAt(textures.ToList().IndexOf(T2D)),
-                    Size = new Vector2(60, 60),
-                    Anchor = Anchor.AutoInlineNoBreak
-                };
-                button.AddChild(new Image(T2D, new Vector2(T2D.Bounds.Width, T2D.Bounds.Height), drawMode: ImageDrawMode.Panel, anchor: Anchor.Center));
-                panel.AddChild(button);
-            }
+            UserInterface.Active.AddEntity(buttons);
+            UserInterface.Active.AddEntity(radioButtons);
 
-
+            UserInterface.Active.AddEntity(Life = new ProgressBar(0, (uint)InitialLife, new Vector2(Screen.Width * 0.20f, Screen.Height * 0.1f), Anchor.TopLeft));
             RichParagraphStyleInstruction.AddInstruction("BOLD_GOLD", new RichParagraphStyleInstruction(fillColor: Color.Gold, fontStyle: FontStyle.Bold));
-            panel.AddChild(new Image(textures[1], new Vector2(textures[1].Bounds.Width, textures[1].Bounds.Height), anchor: Anchor.AutoInlineNoBreak, offset: new Vector2(10, 10)));
-            panel.AddChild(Money = new RichParagraph(@"{{BOLD_GOLD}}   " + MoneyManager.Money, Anchor.AutoInlineNoBreak));
+            UserInterface.Active.AddEntity(new Image(game.Content.Load<Texture2D>("Sprites/Money"), new Vector2(32, 32), anchor: Anchor.TopLeft, offset: new Vector2(0, Screen.Height * 0.12f)));
+            UserInterface.Active.AddEntity(Money = new RichParagraph(@"{{BOLD_GOLD}}   " + MoneyManager.Money, Anchor.TopLeft, offset: new Vector2(20, Screen.Height * 0.12f)));
 
-            UserInterface.Active.AddEntity(panel);
+            Life.Locked = true;
+            PauseIcon = new Image(game.Content.Load<Texture2D>("GeonBit.UI/themes/hd/textures/icons/Book"), new Vector2(32, 32), ImageDrawMode.Stretch, Anchor.TopRight);
 
+            UserInterface.Active.AddEntity(PauseIcon);
+        }
 
+        public void PauseMenu(Game game, List<Button> buttons)
+        {
+            var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(game.GraphicsDevice);
+            PausedMenu = Menu.ReturnCreateMenu("Pausa", viewport.BoundingRectangle.Width / 2, viewport.BoundingRectangle.Height / 1.5f, buttons);
+        }
+
+        public void WinMenu(Game game, List<Button> buttons)
+        {
+            var viewport = new MonoGame.Extended.ViewportAdapters.DefaultViewportAdapter(game.GraphicsDevice);
+            WinMenuPanel = Menu.ReturnCreateMenu("GANASTE", viewport.BoundingRectangle.Width / 2, viewport.BoundingRectangle.Height / 1.5f, buttons);
+        }
+
+        public void Refresh()
+        {
+            Money.Text = @"{{BOLD_GOLD}}   " + MoneyManager.Money;
+        }
+
+        public void RefreshLife(double life)
+        {
+            Life.Value = (int)(Life.Max * (life / (float)Life.Max));
+        }
+
+        private bool ChangePause(bool p)
+        {
+            return !p;
         }
     }
 }
-

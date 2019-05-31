@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace NVP.Entities.Towers
@@ -12,8 +7,11 @@ namespace NVP.Entities.Towers
     {
         public Zombi(Game game, Vector2 position, Texture2D texture, SpriteBatch sprite) : base(game, position, texture, sprite)
         {
-            Life = 20;
-            Dano = (int)(Life * 1.5f);
+            Velocity = 7.5f;
+            TotalLife = Life = 20;
+            Dano = Life * (1.5 / 100);
+            AttackRadius = new MonoGame.Extended.CircleF(position, 5);
+            Cost = 100;
         }
     }
 }

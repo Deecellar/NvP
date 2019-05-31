@@ -24,6 +24,8 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>false</Prefer32Bit>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
@@ -43,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Bullet.cs" />
+    <Compile Include="Entities\Camino.cs" />
     <Compile Include="Entities\Enemies\Archer.cs" />
     <Compile Include="Entities\Enemies\Cultist.cs" />
     <Compile Include="Entities\Enemies\Enemy.cs" />
@@ -55,12 +58,6 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\InstersectionP.cs" />
     <Compile Include="Entities\Intersection.cs" />
-    <Compile Include="Entities\PowerUpSpawner.cs" />
-    <Compile Include="Entities\PowerUps\Demon.cs" />
-    <Compile Include="Entities\PowerUps\Alucard.cs" />
-    <Compile Include="Entities\PowerUps\Angel.cs" />
-    <Compile Include="Entities\PowerUps\Dragon.cs" />
-    <Compile Include="Entities\PowerUps\PowerUp.cs" />
     <Compile Include="Entities\Spawner.cs" />
     <Compile Include="Entities\Towers\Archer.cs" />
     <Compile Include="Entities\Towers\Cultist.cs" />
@@ -74,20 +71,25 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Helpers\AnimationHelper.cs" />
     <Compile Include="Helpers\CollisionHelper.cs" />
-    <Compile Include="Helpers\IAnimatable.cs" />
     <Compile Include="Helpers\InputManager.cs" />
     <Compile Include="Helpers\CollisionableObject.cs" />
     <Compile Include="Helpers\MoneyManager.cs" />
-    <Compile Include="Helpers\SpriteAnimatorHelper.cs" />
+    <Compile Include="Helpers\RandomSpriteHelpe.cs" />
     <Compile Include="Helpers\TiledHelper.cs" />
     <Compile Include="HUD\GameHudElements.cs" />
     <Compile Include="HUD\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Screen\GameScreen.cs" />
-    <Compile Include="Screen\Screens\GameSelectedLevel.cs" />
+    <Compile Include="Screen\Screens\GameoverScreen.cs" />
     <Compile Include="Screen\Screen.cs" />
     <Compile Include="Screen\ScreenManager.cs" />
+    <Compile Include="Screen\Screens\GameSelectedLevel.cs" />
     <Compile Include="Screen\Screens\GameSelectScreen.cs" />
     <Compile Include="Screen\Screens\MainMenuScreen.cs" />
     <Compile Include="Screen\Screens\OptionsScreen.cs" />
@@ -136,6 +138,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
     <EmbeddedResource Include="Icon.bmp" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
@@ -185,6 +191,7 @@
     </None>
     <None Include="app.config" />
     <None Include="app.manifest" />
+    <None Include="DiagramadeClase.cd" />
     <None Include="Content\GeonBit.UI\themes\editor\fonts\Bold.spritefont" />
     <None Include="Content\GeonBit.UI\themes\editor\fonts\Italic.spritefont" />
     <None Include="Content\GeonBit.UI\themes\editor\fonts\Regular.spritefont" />
@@ -197,6 +204,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BehaviorsLicense.txt" />
     <Content Include="Content\GeonBit.UI\themes\editor\effects\disabled.fx" />
     <Content Include="Content\GeonBit.UI\themes\editor\effects\silhouette.fx" />
     <Content Include="Content\GeonBit.UI\themes\editor\styles\Button-Default.xml" />
@@ -774,6 +782,7 @@
     <Content Include="Content\GeonBit.UI\themes\lowres\textures\slider_fancy_md.xml" />
     <Content Include="Content\GeonBit.UI\themes\lowres\textures\white_texture.png" />
     <Content Include="Content\GeonBit.UI\themes\lowres\ThemeData.xml" />
+    <Content Include="license.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,7 +12,8 @@ namespace NVP.Entities
         public BoundingRectangle Bounds { get; set; }
         public string[] Direction { get; set; }
         public float Probability { get; set; }
-        List<Entity> EntitysThatPassed = new List<Entity>();
+        private List<Entity> EntitysThatPassed = new List<Entity>();
+
         public InstersectionP(Vector2 pos, RectangleF bound, string dir, float probability)
         {
             Position = pos;
@@ -32,9 +33,10 @@ namespace NVP.Entities
             }
             else
             {
-                return Convert.ToChar(Direction[random.Next(0, Direction.Length - 2)]);
+                return Convert.ToChar(Direction[random.Next(0, Direction.Length - 1)]);
             }
         }
+
         public void ChangeDirection(Enemies.Enemy enemy)
         {
             if (enemy.Collider.Contains(Bounds.ClosestPointTo(Bounds.Center)) && !EntitysThatPassed.Contains(enemy))

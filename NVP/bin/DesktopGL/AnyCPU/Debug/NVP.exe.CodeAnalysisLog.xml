@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="C:\Users\Lenovo\source\repos\NvP\NVP\bin\DesktopGL\AnyCPU\Debug\NVP.exe">
+   <Modules>
+    <Module Name="nvp.exe">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Bullet" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="Breaking">
+           <Issue Name="IDisposableReimplementation" Certainty="95" Level="Error">Quite IDisposable de la lista de interfaces implementadas por 'Bullet' e invalide la implementación de Dispose de clase base en su lugar.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#.ctor(NVP.Entities.Entity,Microsoft.Xna.Framework.Game,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Single,System.Single,System.Single)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Entities" File="Bullet.cs" Line="10">'Bullet.Bullet(Entity, Game, Vector2, Texture2D, SpriteBatch, float, float, float)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;Bullet..ctor(Entity, Game, Vector2, Texture2D, SpriteBatch, Single, Single, Single)&#xD;&#xA;Entity.set_RotationDegrees(Single):Void&#xD;&#xA;Entity.set_Collider(CircleF):Void&#xD;&#xA;Entity.CreateAnimations():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Tower" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Xna.Framework.Game,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteBatch)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Entities\Towers" File="Tower.cs" Line="11">'Tower.Tower(Game, Vector2, Texture2D, SpriteBatch)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;Tower..ctor(Game, Vector2, Texture2D, SpriteBatch)&#xD;&#xA;Entity.set_Enemigo(Boolean):Void&#xD;&#xA;Entity.get_Position():Vector2&#xD;&#xA;Entity.set_AttackRadius(CircleF):Void&#xD;&#xA;Entity.set_Collider(CircleF):Void&#xD;&#xA;Entity.set_Dano(Double):Void&#xD;&#xA;Entity.CreateAnimations():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="NVP.Entities.Enemies">
+       <Types>
+        <Type Name="Enemy" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Xna.Framework.Game,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteBatch)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Entities\Enemies" File="Enemy.cs" Line="12">'Enemy.Enemy(Game, Vector2, Texture2D, SpriteBatch)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;Enemy..ctor(Game, Vector2, Texture2D, SpriteBatch)&#xD;&#xA;Entity.set_Enemigo(Boolean):Void&#xD;&#xA;Entity.set_Life(Double):Void&#xD;&#xA;Entity.set_TotalLife(Double):Void&#xD;&#xA;Entity.CreateAnimations():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="NVP.Helpers">
+       <Types>
+        <Type Name="TiledHelper" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="NonBreaking">
+           <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implemente IDisposable en 'TiledHelper' porque crea miembros de los tipos IDisposable siguientes: 'TiledMapRenderer'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="NVP.Screen">
+       <Types>
+        <Type Name="Screen" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen" File="Screen.cs" Line="11">Modifique 'Screen.Dispose()' para que llame a Dispose(true) y después a GC.SuppressFinalize en la instancia de objeto actual ('this' o 'Me' en Visual Basic), y después devuelva un valor.</Issue>
+             <Issue Name="DisposeSignature" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen" File="Screen.cs" Line="11">Compruebe que 'Screen.Dispose()' se declaró como público y sellado.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="NVP.Screen.Transitions">
+       <Types>
+        <Type Name="ExpandTransition" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen\Transitions" File="ExpandTransition.cs" Line="22">Modifique 'ExpandTransition.Dispose()' para que llame a Dispose(true) y después a GC.SuppressFinalize en la instancia de objeto actual ('this' o 'Me' en Visual Basic), y después devuelva un valor.</Issue>
+             <Issue Name="DisposeSignature" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen\Transitions" File="ExpandTransition.cs" Line="22">Compruebe que 'ExpandTransition.Dispose()' se declaró como público y sellado.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FadeTransition" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen\Transitions" File="FadeTransition.cs" Line="22">Modifique 'FadeTransition.Dispose()' para que llame a Dispose(true) y después a GC.SuppressFinalize en la instancia de objeto actual ('this' o 'Me' en Visual Basic), y después devuelva un valor.</Issue>
+             <Issue Name="DisposeSignature" Certainty="95" Level="Error" Path="C:\Users\Lenovo\source\repos\NvP\NVP\Screen\Transitions" File="FadeTransition.cs" Line="22">Compruebe que 'FadeTransition.Dispose()' se declaró como público y sellado.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Transition" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2019-05-31 00:41:16Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error">Modifique 'Transition.Dispose()' para que llame a Dispose(true) y después a GC.SuppressFinalize en la instancia de objeto actual ('this' o 'Me' en Visual Basic), y después devuelva un valor.</Issue>
+             <Issue Name="DisposeSignature" Certainty="95" Level="Error">Compruebe que 'Transition.Dispose()' se declaró como público y sellado.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>No llamar a métodos reemplazables en constructores</Name>
+   <Description>No debe llamar desde los constructores a los métodos virtuales definidos en la clase. Si una clase derivada invalidó el método, se llamará a la versión de la clase derivada (antes de llamar al constructor de la clase derivada).</Description>
+   <Resolution Name="Default">{0} contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+   <Name>Implemente IDisposable correctamente</Name>
+   <Description>Todos los tipos IDisposable deben implementar el patrón de Dispose correctamente.</Description>
+   <Resolution Name="DisposeImplementation">Modifique {0} para que llame a Dispose(true) y después a GC.SuppressFinalize en la instancia de objeto actual ('this' o 'Me' en Visual Basic), y después devuelva un valor.</Resolution>
+   <Resolution Name="DisposeSignature">Compruebe que {0} se declaró como público y sellado.</Resolution>
+   <Resolution Name="IDisposableReimplementation">Quite IDisposable de la lista de interfaces implementadas por {0} e invalide la implementación de Dispose de clase base en su lugar.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms244737.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Los tipos que poseen campos descartables deben ser descartables</Name>
+   <Description>Los tipos que declaran miembros descartables también deben implementar IDisposable. Si el tipo no posee ningún recurso no administrado, no implementar un finalizador.</Description>
+   <Resolution Name="NonBreaking">Implemente IDisposable en {0} porque crea miembros de los tipos IDisposable siguientes: {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>

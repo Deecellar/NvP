@@ -1,18 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using MonoGame.Extended;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NVP.Entities
 {
-public    class Intersection
+    public class Intersection
     {
         public Vector2 Position { get; set; }
         public BoundingRectangle Bounds { get; set; }
         public char Direction { get; set; }
+
         public Intersection(Vector2 pos, RectangleF bound, char dir)
         {
             Position = pos;
@@ -22,7 +18,7 @@ public    class Intersection
 
         public void ChangeDirection(Enemies.Enemy enemy)
         {
-            if (enemy.Collider.Contains(Bounds.ClosestPointTo(Bounds.Center)))
+            if (enemy.Collider.Contains(Bounds.ClosestPointTo(Bounds.Center)) || Bounds.Intersects(enemy.Collider.ToRectangle()))
             {
                 enemy.DirectionToGo(Direction);
             }

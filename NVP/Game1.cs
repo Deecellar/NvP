@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using NVP.Screen;
+
 namespace NVP
 {
     /// <summary>
@@ -11,8 +12,8 @@ namespace NVP
     public class Game1 : Game
     {
         public GraphicsDeviceManager Graphics;
-        SpriteBatch spriteBatch;
-        ScreenManager Screen;
+        private SpriteBatch spriteBatch;
+        private ScreenManager Screen;
 
         public Game1()
         {
@@ -46,7 +47,7 @@ namespace NVP
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            NVP.Screen.Transitions.FadeTransition transition= new NVP.Screen.Transitions.FadeTransition(GraphicsDevice, Color.Black, 5);
+            NVP.Screen.Transitions.FadeTransition transition = new NVP.Screen.Transitions.FadeTransition(GraphicsDevice, Color.Black, 5);
             Screen.LoadScreen(new Screen.Screens.MainMenuScreen(this), transition);
             // TODO: use this.Content to load your game content here
         }
@@ -83,7 +84,7 @@ namespace NVP
         {
             UserInterface.Active.Draw(spriteBatch);
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            
+
             Screen.Draw(gameTime);
 
             UserInterface.Active.DrawMainRenderTarget(spriteBatch);
